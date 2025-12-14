@@ -6,6 +6,7 @@
     "dev": "vite",
     "build": "tsup && node ./scripts/generate-types.js",
     "build:preview": "vite build",
+    "vercel-build": "vite build",
     "preview": "vite preview",
     "test": "vitest --run",
     "i18n:validate": "node ./scripts/i18n/validate-translation.js",
