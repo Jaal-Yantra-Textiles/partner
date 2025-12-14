@@ -221,6 +221,10 @@ export function getPartnerRouteMap(): RouteObject[] {
           lazy: () => import("../../routes/reset-password"),
         },
         {
+          path: "/register",
+          lazy: () => import("../../routes/register/index"),
+        },
+        {
           path: "/invite",
           lazy: () => import("../../routes/invite"),
         },

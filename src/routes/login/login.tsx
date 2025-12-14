@@ -22,7 +22,7 @@ export const Login = () => {
   const navigate = useNavigate()
   const { getWidgets } = useExtension()
 
-  const from = location.state?.from?.pathname || "/orders"
+  const from = location.state?.from?.pathname || "/"
 
   const form = useForm<z.infer<typeof LoginSchema>>({
     resolver: zodResolver(LoginSchema),
@@ -154,7 +154,7 @@ export const Login = () => {
             return <Component key={i} />
           })}
         </div>
-        <span className="text-ui-fg-muted txt-small my-6">
+        <div className="text-ui-fg-muted txt-small my-6 flex w-full flex-col items-center gap-y-3">
           <Trans
             i18nKey="login.forgotPassword"
             components={[
@@ -165,7 +165,19 @@ export const Login = () => {
               />,
             ]}
           />
-        </span>
+
+          <div className="flex w-full flex-col items-center">
+            <div className="h-px w-full border-b border-dotted" />
+          </div>
+
+          <Link
+            key="register-link"
+            to="/register"
+            className="text-ui-fg-interactive transition-fg hover:text-ui-fg-interactive-hover focus-visible:text-ui-fg-interactive-hover font-medium outline-none"
+          >
+            Sign up
+          </Link>
+        </div>
       </div>
     </div>
   )
